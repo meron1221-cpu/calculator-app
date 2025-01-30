@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:background="#F5F5F5">
+
+        <TextView
+            android:id="@+id/headerText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="First Calculator"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#17225B"
+            android:gravity="center"
+            android:layout_marginBottom="16dp"
+            tools:ignore="HardcodedText" />
+
+
+
+        <!-- Button to switch between arithmetic and trigonometric operations -->
+        <Button
+            android:id="@+id/switchButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Switch to Trigonometric"
+            android:backgroundTint="#4D2911"
+            android:layout_marginTop="8dp"
+            tools:ignore="HardcodedText,VisualLintButtonSize" />
+
+        <!-- Arithmetic Operations Layout -->
+        <LinearLayout
+            android:id="@+id/arithmeticLayout"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="visible">
+
+            <!-- Arithmetic Operations Section -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Arithmetic Operations"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#17225B"
+                tools:ignore="HardcodedText" />
+
+            <EditText
+                android:id="@+id/input1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:hint="Enter first number"
+                android:textColor="#8B4513"
+                android:inputType="numberDecimal"
+                tools:ignore="Autofill,HardcodedText,TouchTargetSizeCheck,VisualLintTextFieldSize,TextContrastCheck" />
+
+            <EditText
+                android:id="@+id/input2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:hint="Enter second number"
+                android:textColor="#8B4513"
+                android:inputType="numberDecimal"
+                tools:ignore="Autofill,HardcodedText,TextContrastCheck,TouchTargetSizeCheck,VisualLintTextFieldSize" />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="8dp">
+
+                <Button
+                    android:id="@+id/addButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="#4D2911"
+                    android:text="+"
+                    tools:ignore="ButtonStyle,HardcodedText,VisualLintButtonSize" />
+
+                <Button
+                    android:id="@+id/subtractButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="#4D2911"
+                    android:text="-"
+                    tools:ignore="ButtonStyle,HardcodedText,VisualLintButtonSize" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="8dp">
+
+                <Button
+                    android:id="@+id/multiplyButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="#4D2911"
+                    android:text="*"
+                    tools:ignore="ButtonStyle,HardcodedText,VisualLintButtonSize" />
+
+                <Button
+                    android:id="@+id/divideButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="#4D2911"
+                    android:text="/"
+                    tools:ignore="ButtonStyle,HardcodedText,VisualLintButtonSize" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/modButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="%"
+                android:backgroundTint="#4D2911"
+                android:layout_marginTop="8dp"
+                tools:ignore="HardcodedText,VisualLintButtonSize" />
+        </LinearLayout>
+
+        <!-- Trigonometric Operations Layout -->
+        <LinearLayout
+            android:id="@+id/trigonometricLayout"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone">
+
+            <!-- Switch to toggle between Degrees and Radians -->
+            <Switch
+                android:id="@+id/toggleSwitch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Degrees/Radians"
+                android:textColor="#8B4513"
+                tools:ignore="HardcodedText,TouchTargetSizeCheck,UseSwitchCompatOrMaterialXml" />
+
+            <!-- Trigonometric Operations Section -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Trigonometric Operations"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:backgroundTint="#00246B"
+                android:layout_marginTop="20dp"
+                tools:ignore="HardcodedText" />
+
+            <EditText
+                android:id="@+id/angleInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:hint="Enter angle"
+                android:inputType="numberDecimal"
+                tools:ignore="Autofill,HardcodedText" />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="8dp">
+
+                <Button
+                    android:id="@+id/sinButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="#4D2911"
+                    android:text="Sin"
+
+                    tools:ignore="ButtonStyle,HardcodedText" />
+
+                <Button
+                    android:id="@+id/cosButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="#4D2911"
+                    android:text="Cos"
+                    tools:ignore="ButtonStyle,HardcodedText" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="8dp">
+
+                <Button
+                    android:id="@+id/tanButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="#4D2911"
+                    android:text="Tan"
+                    tools:ignore="ButtonStyle,HardcodedText" />
+
+                <Button
+                    android:id="@+id/asinButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="#4D2911"
+                    android:text="sin⁻¹"
+                    tools:ignore="ButtonStyle,HardcodedText" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="8dp">
+
+                <Button
+                    android:id="@+id/acosButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="#4D2911"
+                    android:text="cos⁻¹"
+                    tools:ignore="ButtonStyle,HardcodedText" />
+
+                <Button
+                    android:id="@+id/atanButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="#4D2911"
+                    android:text="tan⁻¹"
+                    tools:ignore="ButtonStyle,HardcodedText" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="8dp">
+
+                <Button
+                    android:id="@+id/cscButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="#4D2911"
+                    android:text="Csc"
+                    tools:ignore="ButtonStyle,HardcodedText" />
+
+                <Button
+                    android:id="@+id/secButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="#4D2911"
+                    android:text="Sec"
+                    tools:ignore="ButtonStyle,HardcodedText" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="8dp">
+
+                <Button
+                    android:id="@+id/cotButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="#4D2911"
+                    android:text="Cot"
+                    tools:ignore="ButtonStyle,HardcodedText" />
+
+                <Button
+                    android:id="@+id/acscButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="#4D2911"
+                    android:text="csc⁻¹"
+                    tools:ignore="ButtonStyle,HardcodedText" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="8dp">
+
+                <Button
+                    android:id="@+id/asecButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="#4D2911"
+                    android:text="sec⁻¹"
+                    tools:ignore="ButtonStyle,HardcodedText" />
+
+                <Button
+                    android:id="@+id/acotButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="#4D2911"
+                    android:text="cot⁻¹"
+                    tools:ignore="ButtonStyle,HardcodedText" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Result Display -->
+        <TextView
+            android:id="@+id/resultDisplay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Result: "
+            android:textSize="18sp"
+
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:background="#FFFFFF"
+            android:padding="12dp"
+            android:textColor="#8B4513"
+            android:elevation="4dp"
+            tools:ignore="HardcodedText" />
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
